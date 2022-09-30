@@ -1,16 +1,7 @@
-/*=============== GOOGLE FONTS ===============*/
+/* Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-/*=============== VARIABLES CSS ===============*/
-:root {
-  /*========== Colors ==========*/
-  --first-color: hsl(232, 54%, 43%);
-  --text-color: hsl(232, 8%, 35%);
-  --white-color: hsl(232, 100%, 99%);
-  --body-color: hsl(232, 45%, 90%);
-  --container-color: #4f61d7;
-}
 
-/*=============== INPUT PASSWORD ===============*/
+/* INPUT PASSWORD */
 * {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
@@ -21,12 +12,14 @@ body {
   height: 100vh;
   display: grid;
   place-items: center;
-  background-color: var(--body-color);
+  background-color: #292936;
 }
 
-.input {
+/* Estilizando o input do tipo password */
+
+.caixa-texto {
   position: relative;
-  background-color: var(--container-color);
+  background-color: #3b3bee;
   padding: 1.55rem 1.45rem;
   border-radius: .5rem;
   display: flex;
@@ -34,21 +27,25 @@ body {
   column-gap: .85rem;
 }
 
-.input__lock, .input__icon {
+/* Estilo para as tags i com os icones */
+
+.input__lock,
+.input__icon {
   font-size: 1.35rem;
   z-index: 1;
 }
 
-.input__lock, .input__password {
-  color: var(--white-color);
+.input__lock,
+.caixa-texto__senha {
+  color: hsl(232, 100%, 99%);
 }
 
 .input__icon {
-  color: var(--first-color);
+  color: hsl(232, 54%, 43%);
   cursor: pointer;
 }
 
-.input__password {
+.caixa-texto__senha {
   background: transparent;
   border: none;
   outline: none;
@@ -56,14 +53,14 @@ body {
   z-index: 1;
 }
 
-.input__password::placeholder {
-  color: var(--white-color);
+.caixa-texto__senha::placeholder {
+  color: hsl(232, 100%, 99%);
 }
 
-.input__overlay {
+.caixa-texto__sobreposicao {
   width: 35px;
   height: 35px;
-  background-color: var(--white-color);
+  background-color: hsl(232, 100%, 99%);
   position: absolute;
   right: .9rem;
   border-radius: 50%;
@@ -71,19 +68,19 @@ body {
   transition: .4s ease-in-out;
 }
 
-/* Transition effect */
-.overlay-content {
+/* Efeito de transição */
+.sobreposicao-content {
   width: 100%;
   height: 100%;
   border-radius: .5rem;
   right: 0;
 }
 
-.overlay-content ~ .input__lock {
-  color: var(--container-color);
+.sobreposicao-content~.input__lock {
+  color: #292936;
 }
 
-.overlay-content ~ .input__password,
-.overlay-content ~ .input__password::placeholder {
-  color: var(--text-color);
+.sobreposicao-content~.caixa-texto__senha,
+.sobreposicao-content~.caixa-texto__senha::placeholder {
+  color: hsl(232, 8%, 35%);
 }

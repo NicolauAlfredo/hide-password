@@ -1,28 +1,28 @@
-/*=============== SHOW / HIDDEN INPUT ===============*/
-const showHiddenInput = (inputOverlay, inputPass, inputIcon) => {
-    const overlay = document.getElementById(inputOverlay),
-        input = document.getElementById(inputPass),
-        iconEye = document.getElementById(inputIcon)
+/* Mostrar - Esconder a caixa de texto */
+const monstrarEsconderTexto = (textoSobreposicao, textoSenha, caixaTextoIcone) => {
+    const sobreposicao = document.getElementById(textoSobreposicao),
+        texto = document.getElementById(textoSenha),
+        icone = document.getElementById(caixaTextoIcone)
 
-    iconEye.addEventListener('click', () => {
-        // Change password to text
-        if (input.type === 'password') {
-            // Switch to text
-            input.type = 'text'
+    icone.addEventListener('click', () => {
+        // Mudar o tipo do  input de password para texto
+        if (texto.type === 'password') {
+            // Mudar para texto
+            texto.type = 'text'
 
-            // Change icon
-            iconEye.classList.add('bx-show')
+            // Mudar o icone
+            icone.classList.add('bx-show')
         } else {
-            // Change to password
-            input.type = 'password'
+            // Mudar para tipo senha
+            texto.type = 'password'
 
-            // Remove icon
-            iconEye.classList.remove('bx-show')
+            // Remover o icone
+            icone.classList.remove('bx-show')
         }
 
-        // Toggle the overlay
-        overlay.classList.toggle('overlay-content')
+        // Alternar a sobreposicao
+        sobreposicao.classList.toggle('sobreposicao-content')
     })
 }
 
-showHiddenInput('input-overlay', 'input-pass', 'input-icon')
+monstrarEsconderTexto('caixa-texto-sobreposicao', 'caixa-texto-senha', 'caixa-texto-icone')
